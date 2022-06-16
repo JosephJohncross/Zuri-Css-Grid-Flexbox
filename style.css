@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root{
+    /* primary */
+    --p-bright-orange: hsl(31, 77%, 52%);
+    --p-dark-cyan: hsl(184, 100%, 22%);
+    --p-v-dark-cyan: hsl(179, 100%, 13%);
+
+    /* neutral */
+    --n-trans-white: hsla(0, 0%, 100%, 0.75);
+    --n-v-light-gray: hsl(0, 0%, 95%);
+
+    /* font weight */
+    --fw-400: 400;
+    --fw--700: 700;
+    --fm-lexend: 'Lexend Deca', sans-serif;
+    --fm-big-shoulder: 'Big Shoulders Display', cursive;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fm-lexend);
+    font-weight: var(--fw-400);
+}
+.design__container{
+    width: 1440px;
+    min-width: 375px;
+    margin: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "sedans suvs luxury";
+    border-radius: .4rem;
+    overflow: hidden;
+}
+.sedans{
+    grid-area: sedans;
+    background-color: var(--p-bright-orange);
+}
+.suvs{
+    grid-area: suvs;
+    background-color: var(--p-dark-cyan);
+}
+.luxury{
+    grid-area: luxury;
+    background-color: var(--p-v-dark-cyan);
+}
+.card{
+    width: 100%;
+    height: 100%;
+    padding: 2.7rem;
+    display: flex;
+    flex-direction: column;
+}
+.card__details{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    justify-content: space-evenly;
+    height: 500px;
+}
+.title{
+    color: var(--n-v-light-gray);
+    font-weight: var(--fw--700);
+    font-family: var(--fm-big-shoulder);
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.card__text{
+    color: var(--n-trans-white);
+}
+.learn__more{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 30%;
+}
+.sedans button{
+    color: var(--p-bright-orange);
+}
+.suvs button{
+    color: var(--p-dark-cyan);
+}
+.luxury button{
+    color: var(--p-v-dark-cyan) ;
+}
+button{
+    background-color: var(--n-v-light-gray);
+    padding: .8rem;
+    border: 2px solid transparent;
+    width: 150px;
+    border-radius: 1.5rem;
+}
+button:hover{
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--n-v-light-gray);
+    border: 2px solid var(--n-v-light-gray);
+}
+@media screen and (max-width: 375px) {
+    body{
+        height: unset;
+    }
+    .design__container{
+        display: block;
+    }
+}
